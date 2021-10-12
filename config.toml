@@ -1,0 +1,25 @@
+# The URL the site will be built for
+base_url = "http://localhost"
+
+default_language = "en"
+compile_sass = true
+title = "Zolastrap"
+description = "A Bootstrap theme for Zola"
+generate_feed = false
+output_dir = "docs"
+
+taxonomies = [
+		{name = "categories", paginate_by = 10},
+		{name = "tags", paginate_by = 10},
+		{name = "authors", paginate_by = 10},
+]
+
+[markdown]
+highlight_code = true
+
+[extra]
+zolastrap_navbar_links = [
+	{title = 'Articles', link = 'articles', external = false}
+]
+zolastrap_navbar_search = 'Buscar'
+zolastrap_date_format = '%d/%m/%Y'

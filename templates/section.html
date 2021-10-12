@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{{section.path}}</h1>
+	{% for page in paginator.pages %}
+		<div class="card">
+			<div class="col-md-6 card-body">
+				<h4 class="card-title">
+					<a
+						class="text-decoration-none link-dark"
+						href="{{page.permalink}}"
+						rel="bookmark"
+						title="{{page.title}}"
+					><b>{{page.title}}</b></a>
+				</h4>
+				<p class="card-text">
+					<small class="text-muted">
+						{% for author in page.taxonomies.authors %}
+						<a
+							class="text-decoration-none link-dark"
+							href="{{get_taxonomy_url(kind="authors", name=author)}}"
+							title="{{author}}"
+						><b>{{author}}</b></a>
+            {% endfor %} - 
+            {{page.date | date(format=config.extra.zolastrap_date_format)}}
+					</small>
+				</p>
+				<p class="card-text text-muted">
+					<small>{{page.summary}}</small>
+				</p>
+			</div>
+		</div>
+	{% endfor %}
+{% endblock content %}
