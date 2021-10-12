@@ -19,7 +19,8 @@ highlight_code = true
 
 [extra]
 zolastrap_navbar_links = [
-	{title = 'Articles', link = 'articles', external = false}
+	{title = 'Articles', link = 'articles', external = false},
+	{title = 'About', link = 'about', external = false}
 ]
 zolastrap_navbar_search = 'Buscar'
 zolastrap_date_format = '%d/%m/%Y'
