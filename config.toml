@@ -1,5 +1,4 @@
-# The URL the site will be built for
-base_url = "http://localhost"
+base_url = "https://marcodpt.github.io/zolastrap/"
 
 default_language = "en"
 compile_sass = true
