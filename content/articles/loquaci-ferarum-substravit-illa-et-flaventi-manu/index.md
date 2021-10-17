@@ -1,9 +1,9 @@
 ---
 title: Loquaci ferarum substravit illa et flaventi manu
 date: 2017-09-24
+extra:
+  image: image.jpg
 taxonomies:
-  categories:
-    - library
   authors:
     - cheryl-d-zigler 
 ---

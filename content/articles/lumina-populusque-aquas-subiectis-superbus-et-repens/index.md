@@ -1,9 +1,9 @@
 ---
 title: Lumina populusque aquas subiectis superbus et repens
 date: 2018-07-01
+extra:
+  image: image.jpg
 taxonomies:
-  categories:
-    - library
   tags:
     - strawberry
     - mango

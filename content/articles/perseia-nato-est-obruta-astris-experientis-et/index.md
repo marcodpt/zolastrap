@@ -1,11 +1,9 @@
 ---
 title: Perseia nato est obruta astris experientis et
-weight: 1
-order: 1
 date: 2018-07-18
+extra:
+  image: image.jpg
 taxonomies:
-  categories:
-    - blog
   authors:
     - vicki-j-dodson 
 ---

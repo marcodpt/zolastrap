@@ -1,9 +1,9 @@
 ---
 title: Hanc sit loquuntur et atque
 date: 2017-09-25
+extra:
+  image: image.jpg
 taxonomies:
-  categories:
-    - media
   tags:
     - tangerine
     - papaya

@@ -1,9 +1,9 @@
 ---
 title: Corpore ventis sanguine Siculaeque quae dumosaque natum
 date: 2018-07-03
+extra:
+  image: image.jpg
 taxonomies:
-  categories: 
-    - other
   tags:
     - lemon
     - orange

@@ -31,9 +31,9 @@
 	{% endfor %}
   {% if section and section.subsections %}
     <ul>
-    {% for subname in section.subsections %}
-      <li>{{subname}}</li>
-    {% endfor %}
+      {% for subname in section.subsections %}
+        <li>{{subname}}</li>
+      {% endfor %}
     </ul>
   {% endif %}
 {% endblock content %}

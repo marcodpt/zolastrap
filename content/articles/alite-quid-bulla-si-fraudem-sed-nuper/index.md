@@ -1,9 +1,9 @@
 ---
 title: Alite quid bulla si fraudem sed nuper
 date: 2018-07-05
+extra:
+  image: image.jpg
 taxonomies:
-  categories:
-    - media
   tags:
     - apple
     - cherry

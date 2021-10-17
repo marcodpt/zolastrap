@@ -1,9 +1,9 @@
 ---
 title: Hunc et corpus mihi Cephisias pater
 date: 2018-07-07
+extra:
+  image: image.jpg
 taxonomies:
-  categories:
-    - article
   tags:
     - pineapple
     - orange

@@ -1,9 +1,9 @@
 ---
 title: Regibus solet qui
 date: 2018-07-10
+extra:
+  image: image.jpg
 taxonomies:
-  categories:
-    - article
   tags:
     - pear
   authors:

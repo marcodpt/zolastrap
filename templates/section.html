@@ -4,31 +4,42 @@
   <h1>{{section.path}}</h1>
 	{% for page in paginator.pages %}
 		<div class="card">
-			<div class="col-md-6 card-body">
-				<h4 class="card-title">
-					<a
-						class="text-decoration-none link-dark"
-						href="{{page.permalink}}"
-						rel="bookmark"
-						title="{{page.title}}"
-					><b>{{page.title}}</b></a>
-				</h4>
-				<p class="card-text">
-					<small class="text-muted">
-						{% for author in page.taxonomies.authors %}
-						<a
-							class="text-decoration-none link-dark"
-							href="{{get_taxonomy_url(kind="authors", name=author)}}"
-							title="{{author}}"
-						><b>{{author}}</b></a>
-            {% endfor %} - 
-            {{page.date | date(format=config.extra.zolastrap_date_format)}}
-					</small>
-				</p>
-				<p class="card-text text-muted">
-					<small>{{page.summary}}</small>
-				</p>
-			</div>
+      <div class="row g-5">
+        <div class="col-md-4 d-flex align-items-center">
+          <img
+            src="{{
+              get_url(path=page.path~page.extra.image)
+            }}"
+            class="img-fluid m-auto d-block"
+            alt="{{page.title}}"
+          />
+        </div>
+        <div class="col-md-8">
+          <h4 class="card-title">
+            <a
+              class="text-decoration-none link-dark"
+              href="{{page.permalink}}"
+              rel="bookmark"
+              title="{{page.title}}"
+            ><b>{{page.title}}</b></a>
+          </h4>
+          <p class="card-text">
+            <small class="text-muted">
+              {% for author in page.taxonomies.authors %}
+              <a
+                class="text-decoration-none link-dark"
+                href="{{get_taxonomy_url(kind="authors", name=author)}}"
+                title="{{author}}"
+              ><b>{{author}}</b></a>
+              {% endfor %} - 
+              {{page.date | date(format=config.extra.zolastrap_date_format)}}
+            </small>
+          </p>
+          <p class="card-text text-muted">
+            <small>{{page.summary}}</small>
+          </p>
+        </div>
+      </div>
 		</div>
 	{% endfor %}
 {% endblock content %}

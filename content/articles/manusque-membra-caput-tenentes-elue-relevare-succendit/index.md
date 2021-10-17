@@ -1,9 +1,9 @@
 ---
 title: Manusque membra caput tenentes elue relevare succendit
 date: 2018-07-19
+extra:
+  image: image.jpg
 taxonomies:
-  categories:
-    - article
   tags:
     - grape
   authors:

@@ -1,9 +1,9 @@
 ---
 title: Radices pennas dolor frigida regna parens muta
 date: 2018-07-02
+extra:
+  image: image.jpg
 taxonomies:
-  categories:
-    - media
   tags:
     - pear
     - raspberry

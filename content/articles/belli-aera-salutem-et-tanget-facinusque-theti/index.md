@@ -1,9 +1,9 @@
 ---
 title: Belli aera salutem et tanget facinusque Theti
 date: 2018-07-04
+extra:
+  image: image.jpg
 taxonomies:
-  categories:
-    - article
   tags:
     - mango
     - coconut

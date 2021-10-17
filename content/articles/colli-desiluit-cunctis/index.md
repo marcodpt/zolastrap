@@ -1,9 +1,9 @@
 ---
 title: Colli desiluit cunctis
 date: 2018-07-09
+extra:
+  image: image.jpg
 taxonomies:
-  categories:
-    - library
   tags:
     - raspberry
     - blackberry

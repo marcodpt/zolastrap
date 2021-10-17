@@ -1,9 +1,9 @@
 ---
 title: Ipse aggere igne
 date: 2018-07-08
+extra:
+  image: image.jpg
 taxonomies:
-  categories:
-    - blog
   tags:
     - mango
     - raspberry

@@ -1,9 +1,9 @@
 ---
 title: Aesonis quam leves senex artes tellus nam
 date: 2018-07-06
+extra:
+  image: image.jpg
 taxonomies:
-  categories:
-    - blog
   tags:
     - peach
   authors:
