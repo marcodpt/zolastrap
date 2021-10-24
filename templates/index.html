@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% import "macros.html" as macros %}
+
 {% block content %}
 	{% for page in paginator.pages %}
 		<div class="card">
@@ -12,15 +14,8 @@
 					><b>{{page.title}}</b></a>
 				</h4>
 				<p class="card-text">
-					<small class="text-muted">
-						{% for author in page.taxonomies.authors %}
-						<a
-							class="text-decoration-none link-dark"
-							href="{{get_taxonomy_url(kind="authors", name=author)}}"
-							title="{{author}}"
-						><b>{{author}}</b></a>
-            {% endfor %} - 
-            {{page.date | date(format=config.extra.zolastrap_date_format)}}
+          <small class="text-muted">
+            {{macros::author(page=page)}}
 					</small>
 				</p>
 				<p class="card-text text-muted">

@@ -1,0 +1,11 @@
+{% macro author(page) %}
+  {% for author_slug in page.taxonomies.authors %}
+    {% set author = get_page(path="authors/"~author_slug~"/index.md") %}
+    <a
+      class="text-decoration-none link-dark"
+      href="{{get_taxonomy_url(kind="authors", name=author_slug)}}"
+      title="{{author.title}}"
+    ><b>{{author.title}}</b></a>
+  {% endfor %} - 
+  {{page.date | date(format=config.extra.zolastrap_date_format)}}
+{% endmacro author %}
