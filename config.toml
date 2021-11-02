@@ -8,8 +8,8 @@ generate_feed = false
 output_dir = "docs"
 
 taxonomies = [
-		{name = "tags", paginate_by = 10},
-		{name = "authors", paginate_by = 10},
+		{name = "tags", paginate_by = 5},
+		{name = "authors", paginate_by = 5},
 ]
 
 [markdown]
@@ -18,7 +18,9 @@ highlight_code = true
 [extra]
 zolastrap_navbar_links = [
 	{title = 'Articles', link = 'articles', external = false},
-	{title = 'About', link = 'about', external = false}
+  {title = 'Authors', link = 'authors', external = false},
+  {title = 'Tags', link = 'tags', external = false},
+	{title = 'About', link = 'about', external = false},
 ]
 zolastrap_navbar_search = 'Buscar'
 zolastrap_date_format = '%d/%m/%Y'

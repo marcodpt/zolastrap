@@ -1,4 +1,5 @@
-+++
-paginate_by = 5
-sort_by = "date"
-+++
+---
+title: Articles
+paginate_by: 5
+sort_by: date
+---

@@ -3,26 +3,7 @@
 
 {% block content %}
 	{% for page in paginator.pages %}
-		<div class="card">
-			<div class="col-md-6 card-body">
-				<h4 class="card-title">
-					<a
-						class="text-decoration-none link-dark"
-						href="{{page.permalink}}"
-						rel="bookmark"
-						title="{{page.title}}"
-					><b>{{page.title}}</b></a>
-				</h4>
-				<p class="card-text">
-          <small class="text-muted">
-            {{macros::author(page=page)}}
-					</small>
-				</p>
-				<p class="card-text text-muted">
-					<small>{{page.summary}}</small>
-				</p>
-			</div>
-		</div>
+    {{macros::post(page=page)}}
 	{% endfor %}
   {% if section and section.subsections %}
     <ul>
@@ -31,4 +12,5 @@
       {% endfor %}
     </ul>
   {% endif %}
+  {{macros::paginator(paginator=paginator)}}
 {% endblock content %}

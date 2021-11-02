@@ -9,3 +9,66 @@
   {% endfor %} - 
   {{page.date | date(format=config.extra.zolastrap_date_format)}}
 {% endmacro author %}
+
+{% macro post(page) %}
+  <div class="card p-3 border-0">
+    <div class="row g-5">
+      <div class="col-md-4 d-flex align-items-center">
+        <img
+          src="{{
+            get_url(path=page.path~page.extra.image)
+          }}"
+          class="img-fluid m-auto d-block"
+          alt="{{page.title}}"
+        />
+      </div>
+      <div class="col-md-8">
+        <h4 class="card-title">
+          <a
+            class="text-decoration-none link-dark"
+            href="{{page.permalink}}"
+            rel="bookmark"
+            title="{{page.title}}"
+          ><b>{{page.title}}</b></a>
+        </h4>
+        <p class="card-text">
+          <small class="text-muted">
+            {{macros::author(page=page)}}
+          </small>
+        </p>
+        <p class="card-text text-muted">
+          {% if page.summary %}
+            <small>{{page.summary}}...</small>
+          {% else %}
+            <small>{{
+              page.content | striptags | split(pat=" ") | slice(end=50) | join(sep=" ")
+            }}...</small>
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  </div>
+{% endmacro post %}
+
+{% macro paginator(paginator)%}
+  <nav>
+    <ul class="pagination">
+      {% for i in range(start=1, end=paginator.number_pagers+1) %}
+        <li class="
+          page-item
+          {% if i == paginator.current_index %}active{% endif %}
+        ">
+          <a
+            class="page-link"
+            {% if i == paginator.current_index %}
+            {% elif i > 1 %}
+            href="{{paginator.base_url}}{{i}}"
+            {% else %}
+            href="{{paginator.first}}"
+            {% endif %}
+          >{{i}}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endmacro paginator %}
