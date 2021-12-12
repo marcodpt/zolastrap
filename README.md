@@ -1,7 +1,7 @@
 # zolastrap
 A bootstrap theme for zola
 
-[Live Demo](marcodpt.github.io/zolastrap/)
+[Live Demo](https://marcodpt.github.io/zolastrap/)
 
 ## Contributing
 Any help is greatly appreciated!
