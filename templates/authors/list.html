@@ -1,5 +1,11 @@
-{% extends "taxonomy_list.html" %}
+{% import "macros.html" as macros %}
+{% extends "base.html" %}
+
+{% block title %}{{config.title}} - Authors{% endblock %}
 
 {% block content %}
-{{ super() }}
+  <h1>Authors</h1>
+  {% for term in terms %}
+    {{macros::authorbox(author_slug=term.name)}}
+  {% endfor %}
 {% endblock content %}

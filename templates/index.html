@@ -2,15 +2,8 @@
 {% import "macros.html" as macros %}
 
 {% block content %}
-	{% for page in paginator.pages %}
+  {% set articles = get_section(path="articles/_index.md") %}
+	{% for page in articles.pages | slice(end=5) %}
     {{macros::post(page=page)}}
 	{% endfor %}
-  {% if section and section.subsections %}
-    <ul>
-      {% for subname in section.subsections %}
-        <li>{{subname}}</li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-  {{macros::paginator(paginator=paginator)}}
 {% endblock content %}

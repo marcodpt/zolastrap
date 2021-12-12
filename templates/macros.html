@@ -72,3 +72,31 @@
     </ul>
   </nav>
 {% endmacro paginator %}
+
+{% macro authorbox(author_slug) %}
+  {% set author = get_page(path="authors/"~author_slug~"/index.md") %}
+  <div class="card">
+    <div class="row g-0">
+      <div class="col-md-4 d-flex align-items-center">
+        <img
+          src="{{
+            get_url(path="authors/"~author_slug~"/"~author.extra.image)
+          }}"
+          class="img-fluid rounded-circle m-auto d-block"
+          alt="{{author.title}}"
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">
+            <a
+              class="link-dark"
+              href="{{get_taxonomy_url(kind="authors", name=author_slug)}}"
+            >{{author.title}}</a>
+          </h5>
+          <p class="card-text">{{author.content | safe}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro authorbox %}

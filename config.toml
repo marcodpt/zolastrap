@@ -22,5 +22,5 @@ zolastrap_navbar_links = [
   {title = 'Tags', link = 'tags', external = false},
 	{title = 'About', link = 'about', external = false},
 ]
-zolastrap_navbar_search = 'Buscar'
+zolastrap_navbar_search = 'Search'
 zolastrap_date_format = '%d/%m/%Y'

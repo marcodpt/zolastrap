@@ -1,5 +1,14 @@
-{% extends "taxonomy_single.html" %}
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+{% block title %}
+	{{config.title}} - {{taxonomy.name}}: {{term.name}}
+{% endblock %}
 
 {% block content %}
-{{ super() }}
+  {{macros::authorbox(author_slug=term.name)}}
+	{% for page in paginator.pages %}
+    {{macros::post(page=page)}}
+	{% endfor %}
+  {{macros::paginator(paginator=paginator)}}
 {% endblock content %}
