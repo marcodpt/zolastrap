@@ -16,11 +16,19 @@ taxonomies = [
 highlight_code = true
 
 [extra]
+zolastrap_theme = 'simplex'
 zolastrap_navbar_links = [
 	{title = 'Articles', link = 'articles', external = false},
   {title = 'Authors', link = 'authors', external = false},
-  {title = 'Tags', link = 'tags', external = false},
 	{title = 'About', link = 'about', external = false},
+	{title = 'Github', link = 'https://github.com/marcodpt/zolastrap', external = true},
 ]
 zolastrap_navbar_search = 'Search'
 zolastrap_date_format = '%d/%m/%Y'
+zolastrap_home = [
+  [
+    {section = 'articles', size = 8, start = 0, end = 5}
+  ]
+]
+
+zolastrap_tags = 'Search by topic'

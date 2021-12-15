@@ -51,6 +51,7 @@
 {% endmacro post %}
 
 {% macro paginator(paginator)%}
+  {% if paginator.number_pagers > 1 %}
   <nav>
     <ul class="pagination">
       {% for i in range(start=1, end=paginator.number_pagers+1) %}
@@ -71,11 +72,12 @@
       {% endfor %}
     </ul>
   </nav>
+  {% endif %}
 {% endmacro paginator %}
 
 {% macro authorbox(author_slug) %}
   {% set author = get_page(path="authors/"~author_slug~"/index.md") %}
-  <div class="card">
+  <div class="card my-5">
     <div class="row g-0">
       <div class="col-md-4 d-flex align-items-center">
         <img

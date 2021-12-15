@@ -2,8 +2,25 @@
 {% import "macros.html" as macros %}
 
 {% block content %}
-  {% set articles = get_section(path="articles/_index.md") %}
-	{% for page in articles.pages | slice(end=5) %}
-    {{macros::post(page=page)}}
-	{% endfor %}
+  {% for row in config.extra.zolastrap_home %}
+    <div class="row">
+      {% for item in row %}
+        <div class="col-md-{{item.size}}">
+          {% set articles = get_section(path=item.section~"/_index.md") %}
+          {% for page in articles.pages | slice(start=item.start, end=item.end) %}
+            {{macros::post(page=page)}}
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+  {% if config.extra.zolastrap_tags %}
+    <h4
+      class="border-bottom border-primary border-2 text-uppercase mt-5"
+    >{{config.extra.zolastrap_tags}}</h4>
+    {% set tags = get_taxonomy(kind="tags") %}
+    {% for item in tags.items %}
+      <a class="link-dark" href="{{item.permalink}}">{{item.name}}</a> | 
+    {% endfor %}
+  {% endif %}
 {% endblock content %}
