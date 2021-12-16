@@ -16,11 +16,14 @@
   {% endfor %}
   {% if config.extra.zolastrap_tags %}
     <h4
-      class="border-bottom border-primary border-2 text-uppercase mt-5"
+      class="border-bottom border-primary border-2 text-uppercase mt-5 fw-bold"
     >{{config.extra.zolastrap_tags}}</h4>
     {% set tags = get_taxonomy(kind="tags") %}
     {% for item in tags.items %}
-      <a class="link-dark" href="{{item.permalink}}">{{item.name}}</a> | 
+      <a
+        class="text-decoration-none link-dark"
+        href="{{item.permalink}}"
+      >{{item.name}}</a> | 
     {% endfor %}
   {% endif %}
 {% endblock content %}

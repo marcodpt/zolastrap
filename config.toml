@@ -21,6 +21,7 @@ zolastrap_navbar_links = [
 	{title = 'Articles', link = 'articles', external = false},
   {title = 'Authors', link = 'authors', external = false},
 	{title = 'About', link = 'about', external = false},
+	{title = 'Topics', link = 'tags', external = false},
 	{title = 'Github', link = 'https://github.com/marcodpt/zolastrap', external = true},
 ]
 zolastrap_navbar_search = 'Search'
@@ -31,4 +32,4 @@ zolastrap_home = [
   ]
 ]
 
-zolastrap_tags = 'Search by topic'
+zolastrap_tags = 'Posts by topic'

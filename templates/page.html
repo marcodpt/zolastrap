@@ -8,6 +8,18 @@
   <p class="text-muted">
     {{macros::author(page=page)}}
   </p>
+  {% if page.taxonomies.tags %}
+  <p>
+    {% for tag in page.taxonomies.tags %}
+      <a
+        href="{{get_taxonomy_url(kind="tags", name=tag)}}"
+        class="badge bg-dark text-decoration-none link-light mx-2"
+      >
+        {{tag}}
+      </a>
+    {% endfor %}
+  </p>
+  {% endif %}
   <div class="content">
     {{page.content | safe}}
   </div>

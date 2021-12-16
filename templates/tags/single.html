@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-  <h1>{{taxonomy.name}}: {{term.name}}</h1>
+  <h1>{{config.extra.zolastrap_tags}}: {{term.name}}</h1>
 	{% for page in paginator.pages %}
     {{macros::post(page=page)}}
 	{% endfor %}
