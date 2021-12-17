@@ -1,12 +1,13 @@
 {% extends "base.html" %}
-{% import "macros.html" as macros %}
+{% import "macros/authors.html" as authors %}
+{% import "macros/authorbox.html" as authorbox %}
 
 {% block title %}{{page.title}} | {{config.title}}{% endblock %}
 
 {% block content %}
   <h1>{{page.title}}</h1>
   <p class="text-muted">
-    {{macros::author(page=page)}}
+    {{authors::render(page=page)}}
   </p>
   {% if page.taxonomies.tags %}
   <p>
@@ -24,6 +25,6 @@
     {{page.content | safe}}
   </div>
   {% for author_slug in page.taxonomies.authors %}
-    {{macros::authorbox(author_slug=author_slug)}}
+    {{authorbox::render(author_slug=author_slug)}}
   {% endfor %}
 {% endblock %}

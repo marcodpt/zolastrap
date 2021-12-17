@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-{% import "macros.html" as macros %}
+{% import "macros/post.html" as post %}
+{% import "macros/paginator.html" as paginator %}
 
 {% block content %}
   {% if section.title %}
@@ -12,7 +13,7 @@
     <div class="px-3">{{section.content | safe}}</div>
   {% endif %}
 	{% for page in paginator.pages %}
-    {{macros::post(page=page)}}
+    {{post::render(page=page)}}
 	{% endfor %}
-  {{macros::paginator(paginator=paginator)}}
+  {{paginator::render(paginator=paginator)}}
 {% endblock content %}

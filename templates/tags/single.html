@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-{% import "macros.html" as macros %}
+{% import "macros/post.html" as post %}
+{% import "macros/paginator.html" as paginator %}
 
 {% block title %}
 	{{config.title}} - {{taxonomy.name}}: {{term.name}}
@@ -8,7 +9,7 @@
 {% block content %}
   <h1>{{config.extra.zolastrap_tags}}: {{term.name}}</h1>
 	{% for page in paginator.pages %}
-    {{macros::post(page=page)}}
+    {{post::render(page=page)}}
 	{% endfor %}
-  {{macros::paginator(paginator=paginator)}}
+  {{paginator::render(paginator=paginator)}}
 {% endblock content %}

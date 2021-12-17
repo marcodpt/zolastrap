@@ -1,4 +1,4 @@
-{% import "macros.html" as macros %}
+{% import "macros/authorbox.html" as authorbox %}
 {% extends "base.html" %}
 
 {% block title %}{{config.title}} - Authors{% endblock %}
@@ -6,6 +6,6 @@
 {% block content %}
   <h1>Authors</h1>
   {% for term in terms %}
-    {{macros::authorbox(author_slug=term.name)}}
+    {{authorbox::render(author_slug=term.name)}}
   {% endfor %}
 {% endblock content %}

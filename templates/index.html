@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-{% import "macros.html" as macros %}
+{% import "macros/post.html" as post %}
+{% import "macros/header.html" as header %}
 
 {% block content %}
   {% for row in config.extra.zolastrap_home %}
@@ -8,16 +9,14 @@
         <div class="col-md-{{item.size}}">
           {% set articles = get_section(path=item.section~"/_index.md") %}
           {% for page in articles.pages | slice(start=item.start, end=item.end) %}
-            {{macros::post(page=page)}}
+            {{post::render(page=page)}}
           {% endfor %}
         </div>
       {% endfor %}
     </div>
   {% endfor %}
   {% if config.extra.zolastrap_tags %}
-    <h4
-      class="border-bottom border-primary border-2 text-uppercase mt-5 fw-bold"
-    >{{config.extra.zolastrap_tags}}</h4>
+    {{header::render(text=config.extra.zolastrap_tags)}}
     {% set tags = get_taxonomy(kind="tags") %}
     {% for item in tags.items %}
       <a

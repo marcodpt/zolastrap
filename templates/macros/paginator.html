@@ -1,0 +1,24 @@
+{% macro render(paginator)%}
+  {% if paginator.number_pagers > 1 %}
+  <nav>
+    <ul class="pagination">
+      {% for i in range(start=1, end=paginator.number_pagers+1) %}
+        <li class="
+          page-item
+          {% if i == paginator.current_index %}active{% endif %}
+        ">
+          <a
+            class="page-link"
+            {% if i == paginator.current_index %}
+            {% elif i > 1 %}
+            href="{{paginator.base_url}}{{i}}"
+            {% else %}
+            href="{{paginator.first}}"
+            {% endif %}
+          >{{i}}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  {% endif %}
+{% endmacro %}
