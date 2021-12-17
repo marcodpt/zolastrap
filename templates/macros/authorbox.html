@@ -1,15 +1,15 @@
+{% import "macros/image.html" as image %}
+
 {% macro render(author_slug) %}
   {% set author = get_page(path="authors/"~author_slug~"/index.md") %}
   <div class="card my-5">
     <div class="row g-0">
       <div class="col-md-4 d-flex align-items-center">
-        <img
-          src="{{
-            get_url(path="authors/"~author_slug~"/"~author.extra.image)
-          }}"
-          class="img-fluid rounded-circle m-auto d-block"
-          alt="{{author.title}}"
-        />
+        {{image::render(
+          src=get_url(path="authors/"~author_slug~"/"~author.extra.image),
+          alt=author.title,
+          extra="rounded-circle"
+        )}}
       </div>
       <div class="col-md-8">
         <div class="card-body">

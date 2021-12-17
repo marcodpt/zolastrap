@@ -1,41 +1,35 @@
-{% import "macros/authors.html" as authors %}
+{% import "macros/image.html" as image %}
+{% import "macros/summary.html" as summary %}
+{% import "macros/info.html" as info %}
 
-{% macro render(page) %}
-  <div class="card p-3 border-0">
-    <div class="row g-5">
-      <div class="col-md-4 d-flex align-items-center">
-        <img
-          src="{{
-            get_url(path=page.path~page.extra.image)
-          }}"
-          class="img-fluid m-auto d-block"
-          alt="{{page.title}}"
-        />
-      </div>
-      <div class="col-md-8">
-        <h4 class="card-title">
-          <a
-            class="text-decoration-none link-dark"
-            href="{{page.permalink}}"
-            rel="bookmark"
-            title="{{page.title}}"
-          ><b>{{page.title}}</b></a>
-        </h4>
-        <p class="card-text">
-          <small class="text-muted">
-            {{authors::render(page=page)}}
-          </small>
-        </p>
-        <p class="card-text text-muted">
-          {% if page.summary %}
-            <small>{{page.summary}}...</small>
-          {% else %}
-            <small>{{
-              page.content | striptags | split(pat=" ") | slice(end=50) | join(sep=" ")
-            }}...</small>
-          {% endif %}
-        </p>
+{% macro render(page, type="default") %}
+  {% if type == "vertical" %}
+    <div class="card p-3 border-0">
+      {{image::render(
+        src=get_url(path=page.path~page.extra.image),
+        alt=page.title,
+        extra="card-img-top"
+      )}}
+      <div class="card-body">
+        {{info::render(page=page)}}
       </div>
     </div>
-  </div>
+  {% else %}
+    <div class="card p-3 border-0">
+      <div class="row g-5">
+        <div class="col-md-4 d-flex align-items-center">
+          {{image::render(
+            src=get_url(path=page.path~page.extra.image),
+            alt=page.title
+          )}}
+        </div>
+        <div class="col-md-8">
+          {{info::render(page=page)}}
+          {% if type == "default" %}
+          {{summary::render(page=page)}}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
 {% endmacro %}

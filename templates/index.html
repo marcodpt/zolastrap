@@ -7,9 +7,17 @@
     <div class="row">
       {% for item in row %}
         <div class="col-md-{{item.size}}">
+          {% if item.title %}
+            {{header::render(text=item.title)}}
+          {% endif %}
           {% set articles = get_section(path=item.section~"/_index.md") %}
           {% for page in articles.pages | slice(start=item.start, end=item.end) %}
-            {{post::render(page=page)}}
+            {% if item.type %}
+            {% set type = item.type %}
+            {% else %}
+            {% set type = 'default' %}
+            {% endif %}
+            {{post::render(page=page, type=type)}}
           {% endfor %}
         </div>
       {% endfor %}

@@ -28,8 +28,12 @@ zolastrap_navbar_search = 'Search'
 zolastrap_date_format = '%d/%m/%Y'
 zolastrap_home = [
   [
-    {section = 'articles', size = 8, start = 0, end = 5}
+    {section = 'articles', size = 8, start = 0, end = 4, type = 'default'},
+    {section = 'articles', size = 4, start = 4, end = 12, type = 'horizontal', title = 'blog'}
+  ],
+  [
+    {section = 'articles', size = 6, start = 10, end = 14, type = 'vertical', title = 'media'}
   ]
 ]
 
-zolastrap_tags = 'Posts by topic'
+zolastrap_tags = 'Posts by Topics'
