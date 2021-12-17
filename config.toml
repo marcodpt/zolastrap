@@ -25,6 +25,7 @@ zolastrap_navbar_links = [
 	{title = 'Github', link = 'https://github.com/marcodpt/zolastrap', external = true},
 ]
 zolastrap_navbar_search = 'Search'
+zolastrap_navbar_themes = true
 zolastrap_date_format = '%d/%m/%Y'
 zolastrap_home = [
   [
@@ -37,3 +38,31 @@ zolastrap_home = [
 ]
 
 zolastrap_tags = 'Posts by Topics'
+zolastrap_themes = [
+  'default',
+  'cerulean',
+  'cosmo',
+  'cyborg',
+  'darkly',
+  'flatly',
+  'journal',
+  'litera',
+  'lumen',
+  'lux',
+  'materia',
+  'minty',
+  'morph',
+  'pulse',
+  'quartz',
+  'sandstone',
+  'simplex',
+  'sketchy',
+  'slate',
+  'solar',
+  'spacelab',
+  'superhero',
+  'united',
+  'vapor',
+  'yeti',
+  'zephyr'
+]
