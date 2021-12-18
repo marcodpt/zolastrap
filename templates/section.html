@@ -1,19 +1,5 @@
-{% extends "base.html" %}
-{% import "macros/post.html" as post %}
-{% import "macros/paginator.html" as paginator %}
+{% extends "index.html" %}
 
 {% block content %}
-  {% if section.title %}
-    <h1 class="px-3">{{section.title}}</h1>
-  {% endif %}
-  {% if section.description %}
-    <p class="px-3 text-muted">{{section.description}}</p>
-  {% endif %}
-  {% if section.content %}
-    <div class="px-3">{{section.content | safe}}</div>
-  {% endif %}
-	{% for page in paginator.pages %}
-    {{post::render(page=page)}}
-	{% endfor %}
-  {{paginator::render(paginator=paginator)}}
-{% endblock content %}
+  {{super()}}
+{% endblock %}

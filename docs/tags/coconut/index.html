@@ -531,6 +531,7 @@
               </li>
             
           </ul>
+          
           <form class="d-flex">
             <input
               class="form-control me-sm-2"
@@ -542,6 +543,7 @@
               type="submit"
             ><i class="fas fa-search"></i></button>
           </form>
+          
         </div>
       </div>
     </nav>
@@ -615,16 +617,22 @@ vultu praesagaque patruus contraria regia sagitta, saepe....</small>
 
     </div>
     <script>
-      function switchTheme(id) {
+      function switchTheme(theme) {
+        sessionStorage.setItem("theme", theme)
         document
           .querySelectorAll('link.alternate')
           .forEach(function (e) {
-            if (e.id == id) {
+            if (e.id == theme) {
               e.rel = "stylesheet"
             } else {
               e.rel = "stylesheet alternate"
             }
           })
+      }
+
+      var theme = sessionStorage.getItem("theme")
+      if (theme) {
+        switchTheme(theme)
       }
     </script>
   </body>

@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% import "macros/post.html" as post %}
+{% import "macros/paginator.html" as paginator %}
 {% import "macros/header.html" as header %}
 
 {% block content %}
-  {% for row in config.extra.zolastrap_home %}
+  {% if section.extra.home %}
+  {% for row in section.extra.home %}
     <div class="row">
       {% for item in row %}
         <div class="col-md-{{item.size}}">
@@ -23,8 +25,22 @@
       {% endfor %}
     </div>
   {% endfor %}
-  {% if config.extra.zolastrap_tags %}
-    {{header::render(text=config.extra.zolastrap_tags)}}
+  {% endif %}
+  {% if section.title %}
+    <h1 class="px-3">{{section.title}}</h1>
+  {% endif %}
+  {% if section.description %}
+    <p class="px-3 text-muted">{{section.description}}</p>
+  {% endif %}
+  {% if section.content %}
+    <div class="px-3">{{section.content | safe}}</div>
+  {% endif %}
+	{% for page in paginator.pages %}
+    {{post::render(page=page)}}
+	{% endfor %}
+  {{paginator::render(paginator=paginator)}}
+  {% if section.extra.tags %}
+    {{header::render(text=config.extra.tags)}}
     {% set tags = get_taxonomy(kind="tags") %}
     {% for item in tags.items %}
       <a
@@ -33,4 +49,4 @@
       >{{item.name}}</a> | 
     {% endfor %}
   {% endif %}
-{% endblock content %}
+{% endblock %}

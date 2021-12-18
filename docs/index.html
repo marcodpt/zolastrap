@@ -529,6 +529,7 @@
               </li>
             
           </ul>
+          
           <form class="d-flex">
             <input
               class="form-control me-sm-2"
@@ -540,11 +541,13 @@
               type="submit"
             ><i class="fas fa-search"></i></button>
           </form>
+          
         </div>
       </div>
     </nav>
     <div class="container mx-auto my-5">
       
+  
   
     <div class="row">
       
@@ -1431,6 +1434,16 @@ Miseram perstas. Coluit excita;...</small>
     </div>
   
   
+  
+    <h1 class="px-3">Articles</h1>
+  
+  
+  
+	
+  
+  
+
+  
     
   <h4
     class="border-bottom border-primary border-2 text-uppercase mt-5 fw-bold"
@@ -1517,16 +1530,22 @@ Miseram perstas. Coluit excita;...</small>
 
     </div>
     <script>
-      function switchTheme(id) {
+      function switchTheme(theme) {
+        sessionStorage.setItem("theme", theme)
         document
           .querySelectorAll('link.alternate')
           .forEach(function (e) {
-            if (e.id == id) {
+            if (e.id == theme) {
               e.rel = "stylesheet"
             } else {
               e.rel = "stylesheet alternate"
             }
           })
+      }
+
+      var theme = sessionStorage.getItem("theme")
+      if (theme) {
+        switchTheme(theme)
       }
     </script>
   </body>

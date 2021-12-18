@@ -7,9 +7,9 @@
 {% endblock %}
 
 {% block content %}
-  <h1>{{config.extra.zolastrap_tags}}: {{term.name}}</h1>
+  <h1>{{config.extra.tags}}: {{term.name}}</h1>
 	{% for page in paginator.pages %}
     {{post::render(page=page)}}
 	{% endfor %}
   {{paginator::render(paginator=paginator)}}
-{% endblock content %}
+{% endblock %}

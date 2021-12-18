@@ -3,14 +3,14 @@
 {% block title %}{{config.title}} - {{taxonomy.name}}{% endblock %}
 
 {% block content %}
-		<h1>{{config.extra.zolastrap_tags}}</h1>
-    {% for tag in terms %}
-      <a
-        href="{{tag.permalink}}"
-        class="btn btn-primary m-2"
-      >
-        {{tag.name}}
-        <span class="badge bg-secondary">{{tag.pages | length}}</span>
-      </a>
-    {% endfor %}
+  <h1>{{config.extra.tags}}</h1>
+  {% for tag in terms %}
+    <a
+      href="{{tag.permalink}}"
+      class="btn btn-primary m-2"
+    >
+      {{tag.name}}
+      <span class="badge bg-secondary">{{tag.pages | length}}</span>
+    </a>
+  {% endfor %}
 {% endblock %}
