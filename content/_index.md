@@ -1,5 +1,4 @@
 ---
-title: Articles
 paginate_by: 5
 sort_by: date
 extra:
@@ -22,4 +21,10 @@ extra:
       end: 14
       type: vertical
       title: media
+  - - section: articles
+      size: 4
+      start: 4
+      end: 14
+      type: carousel
+      title: library
 ---

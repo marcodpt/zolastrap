@@ -1,0 +1,11 @@
+{% import "macros/carousel.html" as carousel %}
+
+{% macro render(pages, type="default") %}
+  {% if type == "carousel" %}
+    {{carousel::render(pages=pages)}}
+  {% else %}
+    {% for page in pages %}
+      {{post::render(page=page, type=type)}}
+    {% endfor %}
+  {% endif %}
+{% endmacro %}

@@ -8,8 +8,8 @@ generate_feed = false
 output_dir = "docs"
 
 taxonomies = [
-		{name = "tags", paginate_by = 5},
-		{name = "authors", paginate_by = 5},
+  {name = "tags", paginate_by = 5},
+  {name = "authors", paginate_by = 5},
 ]
 
 [markdown]

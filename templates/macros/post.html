@@ -14,6 +14,18 @@
         {{info::render(page=page)}}
       </div>
     </div>
+  {% elif type == "carousel" %}
+    <div class="carousel-item">
+      <img
+        src="{{get_url(path=page.path~page.extra.image)}}"
+        class="d-block w-100"
+        alt="{{page.title}}"
+      >
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{page.title}}</h5>
+        <p>{{authors::render(page=page)}}</p>
+      </div>
+    </div>
   {% else %}
     <div class="card p-3 border-0">
       <div class="row g-5">

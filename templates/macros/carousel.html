@@ -1,0 +1,47 @@
+{% import "macros/authors.html" as authors %}
+
+{% macro render(pages) %}
+  {% if pages | length > 0 %}
+    {% set id = "bs-carousel-"~get_random(start = 0, end = 999999999)%}
+    <div
+       id="{{id}}"
+       class="carousel slide"
+       data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        {% for page in pages %}
+          <div class="carousel-item{% if loop.first %} active{% endif %}">
+            <img
+              src="{{get_url(path=page.path~page.extra.image)}}"
+              class="d-block w-100"
+              alt="{{page.title}}"
+            >
+            <div class="carousel-caption d-none d-md-block">
+              <h5>{{page.title}}</h5>
+              <p>{{authors::render(page=page)}}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#{{id}}"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#{{id}}"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  {% endif %}
+{% endmacro %}
+

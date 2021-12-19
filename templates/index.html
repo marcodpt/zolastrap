@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% import "macros/post.html" as post %}
+{% import "macros/posts.html" as posts %}
 {% import "macros/paginator.html" as paginator %}
 {% import "macros/header.html" as header %}
 
@@ -13,14 +14,13 @@
             {{header::render(text=item.title)}}
           {% endif %}
           {% set articles = get_section(path=item.section~"/_index.md") %}
-          {% for page in articles.pages | slice(start=item.start, end=item.end) %}
-            {% if item.type %}
-            {% set type = item.type %}
-            {% else %}
-            {% set type = 'default' %}
-            {% endif %}
-            {{post::render(page=page, type=type)}}
-          {% endfor %}
+          {% if item.type %}
+          {% set type = item.type %}
+          {% else %}
+          {% set type = 'default' %}
+          {% endif %}
+          {% set pages = articles.pages | slice(start=item.start, end=item.end) %}
+          {{posts::render(pages=pages, type=type)}}
         </div>
       {% endfor %}
     </div>
