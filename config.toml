@@ -55,3 +55,10 @@ themes = [
   'yeti',
   'zephyr'
 ]
+social_icons = [
+  {title = 'Facebook', icon = 'facebook-f', url = 'https://www.facebook.com'},
+  {title = 'Instagram', icon = 'instagram', url = 'https://www.instagram.com'},
+  {title = 'Twitter', icon = 'twitter', url = 'https://twitter.com'},
+  {title = 'YouTube', icon = 'youtube', url = 'https://www.youtube.com'}
+]
+email = "user@mail.com"

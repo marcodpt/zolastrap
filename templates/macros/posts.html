@@ -1,7 +1,19 @@
 {% import "macros/carousel.html" as carousel %}
 
-{% macro render(pages, type="default") %}
-  {% if type == "carousel" %}
+{% macro render(pages, type="default", row=0) %}
+  {% if row > 0 %}
+    <div class="row">
+    {% for page in pages %}
+    {% if not loop.first and loop.index0 % row == 0 %}
+    </div>
+    <div class="row">
+    {% endif%}
+      <div class="col-md">
+        {{post::render(page=page, type=type)}}
+      </div>
+    {% endfor %}
+    </div>
+  {% elif type == "carousel" %}
     {{carousel::render(pages=pages)}}
   {% else %}
     {% for page in pages %}

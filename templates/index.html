@@ -20,7 +20,7 @@
           {% set type = 'default' %}
           {% endif %}
           {% set pages = articles.pages | slice(start=item.start, end=item.end) %}
-          {{posts::render(pages=pages, type=type)}}
+          {{posts::render(pages=pages, type=type, row=item.row | default(value=0))}}
         </div>
       {% endfor %}
     </div>
@@ -44,7 +44,7 @@
     {% set tags = get_taxonomy(kind="tags") %}
     {% for item in tags.items %}
       <a
-        class="text-decoration-none link-dark"
+        class="text-decoration-none text-reset"
         href="{{item.permalink}}"
       >{{item.name}}</a> | 
     {% endfor %}

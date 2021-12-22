@@ -3,7 +3,18 @@
 {% import "macros/info.html" as info %}
 
 {% macro render(page, type="default") %}
-  {% if type == "vertical" %}
+  {% if type == "overlay" %}
+    <div class="card border-0 text-white">
+      {{image::render(
+        src=get_url(path=page.path~page.extra.image),
+        alt=page.title,
+        extra="card-img"
+      )}}
+      <div class="card-img-overlay">
+        {{info::render(page=page)}}
+      </div>
+    </div>
+  {% elif type == "vertical" %}
     <div class="card p-3 border-0">
       {{image::render(
         src=get_url(path=page.path~page.extra.image),

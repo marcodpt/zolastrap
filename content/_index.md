@@ -16,6 +16,13 @@ extra:
       type: horizontal
       title: blog
   - - section: articles
+      size: 12 
+      start: 0
+      end: 12
+      type: vertical
+      title: articles
+      row: 4
+  - - section: articles
       size: 6
       start: 10
       end: 14
@@ -27,4 +34,11 @@ extra:
       end: 14
       type: carousel
       title: library
+    - section: articles
+      size: 8
+      start: 6
+      end: 14
+      type: overlay 
+      title: other
+      row: 4
 ---

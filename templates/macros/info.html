@@ -1,14 +1,14 @@
 {% import "macros/authors.html" as authors %}
 
 {% macro render(page) %}
-  <h4 class="card-title">
+  <h6 class="card-title">
     <a
-      class="text-decoration-none link-dark"
+      class="text-decoration-none text-reset"
       href="{{page.permalink}}"
       rel="bookmark"
       title="{{page.title}}"
     ><b>{{page.title}}</b></a>
-  </h4>
+  </h6>
   <p class="card-text">
     <small class="text-muted">
       {{authors::render(page=page)}}

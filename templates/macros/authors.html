@@ -2,10 +2,10 @@
   {% for author_slug in page.taxonomies.authors %}
     {% set author = get_page(path="authors/"~author_slug~"/index.md") %}
     <a
-      class="text-decoration-none link-dark"
+      class="text-decoration-none text-reset"
       href="{{get_taxonomy_url(kind="authors", name=author_slug)}}"
       title="{{author.title}}"
-    ><b>{{author.title}}</b></a>
-  {% endfor %} - 
+    ><b>{{author.title}}</b></a>{% if not loop.last %}, {% endif %}
+  {% endfor %}{% if page.taxonomies.authors | length > 0 %} - {% endif %}
   {{page.date | date(format=config.extra.date_format)}}
 {% endmacro %}
