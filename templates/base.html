@@ -32,7 +32,12 @@
     <script src="{{get_url(path="theme.js")}}"></script>
     {% endblock %}
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
+    {% if config.extra.banner %}
+      <div class="w-100">
+        <img src="{{get_url(path=config.extra.banner)}}" class="w-100" />
+      </div>
+    {% endif %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand"
@@ -106,7 +111,7 @@
       {% block content %}
       {% endblock %}
     </div>
-    <footer class="mt-5 bg-dark text-center p-5 text-light">
+    <footer class="mt-auto bg-dark text-center p-5 text-light">
       <a
         href="mailto:{{config.extra.email}}"
         class="text-reset text-decoration-none"

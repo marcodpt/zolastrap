@@ -13,14 +13,52 @@
           {% if item.title %}
             {{header::render(text=item.title)}}
           {% endif %}
-          {% set articles = get_section(path=item.section~"/_index.md") %}
-          {% if item.type %}
-          {% set type = item.type %}
+          {% if item.section %}
+            {% set articles = get_section(path=item.section~"/_index.md") %}
+            {% set type = item.type | default(value='default') %}
+            {% if item.rows %}
+              {% set_global start = item.start %}
+              {% for row in item.rows %}
+                {% set end = start + row %}
+                {% set pages = articles.pages | slice(start=start, end=end) %}
+                {{posts::render(pages=pages, type=type, row=row)}}
+                {% set_global start = end %}
+              {% endfor %}
+            {% else %}
+              {% set pages = articles.pages | slice(start=item.start, end=item.end) %}
+              {% set row = item.row | default(value=0) %}
+              {{posts::render(pages=pages, type=type, row=row)}}
+            {% endif %}
           {% else %}
-          {% set type = 'default' %}
+            {% for i in item.items %}
+              <div class="card m-5">
+                {% if i.img %}
+                <a href="{{i.url}}">
+                  <img
+                    src="{{get_url(path=i.img)}}"
+                    class="card-img-top"
+                    alt="{{i.info | default(value='')}}"
+                    title="{{i.info | default(value='')}}"
+                  >
+                </a>
+                {% endif %}
+                <div class="card-body text-center">
+                  {% if i.title %}
+                  <h5 class="card-title">{{i.title}}</h5>
+                  {% endif %}
+                  {% if i.description %}
+                  <p class="card-text">{{i.description}}</p>
+                  {% endif %}
+                  {% if i.label or i.icon %}
+                  <a
+                    href="{{i.url}}"
+                    {% if i.button %}class="btn btn-{{i.button}}"{% endif %}
+                  >{{i.label}}{% if i.icon %} <i class="{{i.icon}}"></i>{% endif %}</a>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
           {% endif %}
-          {% set pages = articles.pages | slice(start=item.start, end=item.end) %}
-          {{posts::render(pages=pages, type=type, row=item.row | default(value=0))}}
         </div>
       {% endfor %}
     </div>

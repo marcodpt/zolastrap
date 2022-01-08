@@ -28,6 +28,26 @@ extra:
       end: 14
       type: vertical
       title: media
+    - size: 6
+      items: 
+       - img: img/first.jpg
+         title: first
+         url: about
+       - img: img/second.jpg
+         title: second
+         url: about
+       - img: img/third.jpg
+         title: third
+         url: about
+       - img: img/fourth.jpg
+         title: fourth
+         url: about
+       - title: RSS Feed
+         description: Subscribe now!
+         label: RSS
+         icon: fas fa-rss
+         button: secondary
+         url: about
   - - section: articles
       size: 4
       start: 4
@@ -40,5 +60,7 @@ extra:
       end: 14
       type: overlay 
       title: other
-      row: 4
+      rows:
+       - 3
+       - 4
 ---

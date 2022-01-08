@@ -62,3 +62,4 @@ social_icons = [
   {title = 'YouTube', icon = 'youtube', url = 'https://www.youtube.com'}
 ]
 email = "user@mail.com"
+banner = "img/banner.jpeg"
