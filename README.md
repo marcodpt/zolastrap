@@ -13,7 +13,8 @@ Any help is greatly appreciated!
 
 ## TODO
  - Make search work
- - add bootstrap classes to text
  - config navbar
  - config footer
  - better authors page
+ - use it in small project
+ - make theme available
