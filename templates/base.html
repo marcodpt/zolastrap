@@ -30,7 +30,8 @@
     {% endif %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="{{get_url(path="js/theme.js")}}"></script>
-    <script src="{{get_url(path="js/display.js")}}"></script>
+    <script src="{{get_url(path="js/scheme.js")}}"></script>
+    <script src="{{get_url(path="js/blockquote.js")}}"></script>
     {% endblock %}
   </head>
   <body class="d-flex flex-column min-vh-100">
@@ -39,7 +40,12 @@
         <img src="{{get_url(path=config.extra.banner)}}" class="w-100" />
       </div>
     {% endif %}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="
+      navbar
+      navbar-expand-lg
+      navbar-{{config.extra.navbar_type}}
+      bg-{{config.extra.navbar_bg}}
+    ">
       <div class="container-fluid">
         <a class="navbar-brand"
           href="{{config.base_url}}"
@@ -91,6 +97,31 @@
                 </ul>
               </li>
             {% endif %}
+            {% if config.extra.schemes %}
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Choose a Color Scheme
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {% for scheme in config.extra.schemes %}
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onclick="switchScheme('{{scheme}}')"
+                      >{{scheme | capitalize}}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% endif %}
           </ul>
           {% if config.extra.search %}
           <form class="d-flex">
@@ -112,7 +143,12 @@
       {% block content %}
       {% endblock %}
     </div>
-    <footer class="mt-auto bg-dark text-center p-5 text-light">
+    <footer class="
+      mt-auto p-5
+      bg-{{config.extra.footer_bg}}
+      text-center
+      text-{{config.extra.footer_font}}
+    ">
       <a
         href="mailto:{{config.extra.email}}"
         class="text-reset text-decoration-none"

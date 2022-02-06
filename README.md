@@ -13,8 +13,6 @@ Any help is greatly appreciated!
 
 ## TODO
  - Make search work
- - config navbar
- - config footer
- - better authors page
+ - docs of all variables
  - use it in small project
  - make theme available
