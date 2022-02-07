@@ -12,6 +12,8 @@ taxonomies = [
   {name = "authors", paginate_by = 5},
 ]
 
+build_search_index = true
+
 [markdown]
 highlight_code = true
 

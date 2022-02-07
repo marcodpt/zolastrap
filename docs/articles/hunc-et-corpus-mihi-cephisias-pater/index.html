@@ -249,6 +249,11 @@
     <script src="https://marcodpt.github.io/zolastrap/js/scheme.js"></script>
     <script src="https://marcodpt.github.io/zolastrap/js/blockquote.js"></script>
     
+    <script defer src="https://marcodpt.github.io/zolastrap/elasticlunr.min.js"></script>
+    <script defer src="https://marcodpt.github.io/zolastrap/search_index.en.js"></script>
+    <script src="https://marcodpt.github.io/zolastrap/js/search.js"></script>
+    
+    
   </head>
   <body class="d-flex flex-column min-vh-100">
     
@@ -680,14 +685,15 @@
             />
             <button
               class="btn btn-secondary my-2 my-sm-0"
-              type="submit"
+              type="button"
+              onclick="goSearch(this)"
             ><i class="fas fa-search"></i></button>
           </form>
           
         </div>
       </div>
     </nav>
-    <div class="container mx-auto my-5">
+    <main class="container mx-auto my-5">
       
   <h1>Hunc et corpus mihi Cephisias pater</h1>
   <p class="text-muted">
@@ -803,7 +809,7 @@ arserunt luminis. Reor domus quas, illa praebet.</p>
 
   
 
-    </div>
+    </main>
     <footer class="
       mt-auto p-5
       bg-dark

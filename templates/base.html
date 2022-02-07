@@ -32,6 +32,11 @@
     <script src="{{get_url(path="js/theme.js")}}"></script>
     <script src="{{get_url(path="js/scheme.js")}}"></script>
     <script src="{{get_url(path="js/blockquote.js")}}"></script>
+    {% if config.build_search_index %}
+    <script defer src="{{get_url(path="elasticlunr.min.js")}}"></script>
+    <script defer src="{{get_url(path="search_index.en.js")}}"></script>
+    <script src="{{get_url(path="js/search.js")}}"></script>
+    {% endif %}
     {% endblock %}
   </head>
   <body class="d-flex flex-column min-vh-100">
@@ -132,17 +137,18 @@
             />
             <button
               class="btn btn-secondary my-2 my-sm-0"
-              type="submit"
+              type="button"
+              onclick="goSearch(this)"
             ><i class="fas fa-search"></i></button>
           </form>
           {% endif %}
         </div>
       </div>
     </nav>
-    <div class="container mx-auto my-5">
+    <main class="container mx-auto my-5">
       {% block content %}
       {% endblock %}
-    </div>
+    </main>
     <footer class="
       mt-auto p-5
       bg-{{config.extra.footer_bg}}
