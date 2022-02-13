@@ -1,13 +1,12 @@
 {% macro render(page) %}
-  {% if page.taxonomies.authors %}
-  {% for author_slug in page.taxonomies.authors %}
+  {% set authors = page.taxonomies.authors | default(value=[]) %}
+  {% for author_slug in authors %}
     {% set author = get_page(path="authors/"~author_slug~"/index.md") %}
     <a
       class="text-decoration-none text-reset"
       href="{{get_taxonomy_url(kind="authors", name=author_slug)}}"
       title="{{author.title}}"
     ><b>{{author.title}}</b></a>{% if not loop.last %}, {% endif %}
-  {% endfor %}{% if page.taxonomies.authors | length > 0 %} - {% endif %}
-  {% endif %}
+  {% endfor %}{% if authors | length > 0 %} - {% endif %}
   {{page.date | date(format=config.extra.date_format)}}
 {% endmacro %}

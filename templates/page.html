@@ -24,7 +24,7 @@
   <div class="content">
     {{page.content | safe}}
   </div>
-  {% for author_slug in page.taxonomies.authors %}
+  {% for author_slug in page.taxonomies.authors | default(value=[]) %}
     {{authorbox::render(author_slug=author_slug)}}
   {% endfor %}
 {% endblock %}
