@@ -1,4 +1,5 @@
 {% macro render(page) %}
+  {% if page.taxonomies.authors %}
   {% for author_slug in page.taxonomies.authors %}
     {% set author = get_page(path="authors/"~author_slug~"/index.md") %}
     <a
@@ -7,5 +8,6 @@
       title="{{author.title}}"
     ><b>{{author.title}}</b></a>{% if not loop.last %}, {% endif %}
   {% endfor %}{% if page.taxonomies.authors | length > 0 %} - {% endif %}
+  {% endif %}
   {{page.date | date(format=config.extra.date_format)}}
 {% endmacro %}
