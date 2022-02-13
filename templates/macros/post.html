@@ -16,11 +16,11 @@
     </div>
   {% elif type == "vertical" %}
     <div class="card p-3 border-0">
-      {{image::render(
+      {% if page.extra.image %}{{image::render(
         src=get_url(path=page.path~page.extra.image),
         alt=page.title,
         extra="card-img-top"
-      )}}
+      )}}{% endif %}
       <div class="card-body">
         {{info::render(page=page)}}
       </div>
@@ -40,7 +40,7 @@
   {% else %}
     <div class="card p-3 border-0">
       <div class="row g-5">
-        {% set img = page.extra.image %}
+        {% set img = page.extra.image | default(value="") %}
         {% if img %}
         <div class="col-md-4 d-flex align-items-center">
           {{image::render(
