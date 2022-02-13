@@ -40,13 +40,16 @@
   {% else %}
     <div class="card p-3 border-0">
       <div class="row g-5">
+        {% set img = page.extra.image %}
+        {% if img %}
         <div class="col-md-4 d-flex align-items-center">
           {{image::render(
-            src=get_url(path=page.path~page.extra.image),
+            src=get_url(path=page.path~img),
             alt=page.title
           )}}
         </div>
-        <div class="col-md-8">
+        {% endif %}
+        <div class="col-md-{% if img %}8{% else %}12{% endif %}">
           {{info::render(page=page)}}
           {% if type == "default" %}
           {{summary::render(page=page)}}

@@ -5,8 +5,7 @@
 {% import "macros/header.html" as header %}
 
 {% block content %}
-  {% if section.extra.home %}
-  {% for row in section.extra.home %}
+  {% for row in section.extra.home | default(value=[]) %}
     <div class="row">
       {% for item in row %}
         <div class="col-md-{{item.size}}">
@@ -63,7 +62,6 @@
       {% endfor %}
     </div>
   {% endfor %}
-  {% endif %}
   {% if section.title %}
     <h1 class="px-3">{{section.title}}</h1>
   {% endif %}
