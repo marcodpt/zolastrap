@@ -679,7 +679,7 @@
             
           </ul>
           
-          <form class="d-flex">
+          <form class="d-flex" onsubmit="return goSearch(event)">
             <input
               class="form-control me-sm-2"
               type="text"
@@ -687,8 +687,7 @@
             />
             <button
               class="btn btn-secondary my-2 my-sm-0"
-              type="button"
-              onclick="goSearch(this)"
+              type="submit"
             ><i class="fas fa-search"></i></button>
           </form>
           

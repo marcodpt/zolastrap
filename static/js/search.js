@@ -3,8 +3,11 @@ function closeSearch() {
   main.innerHTML = window.main
 }
 
-function goSearch(btn) {
-  const term = btn
+function goSearch(ev) {
+  ev.preventDefault()
+  ev.stopPropagation()
+
+  const term = ev.target 
     .closest('form')
     .querySelector('input[type="text"]')
     .value.trim()
@@ -61,6 +64,8 @@ function goSearch(btn) {
   `
 
   main.innerHTML = html
+
+  return false
 }
 
 function makeTeaser(body, terms) {

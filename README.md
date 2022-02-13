@@ -12,7 +12,6 @@ Any help is greatly appreciated!
  - [Bootswatch](https://bootswatch.com)
 
 ## TODO
- - search form on submit
  - docs of all variables
  - use it in small project
  - make theme available
