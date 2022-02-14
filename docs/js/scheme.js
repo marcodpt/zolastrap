@@ -31,15 +31,23 @@ function switchScheme(scheme) {
   const t = Scheme[1] || Scheme[0]
 
   colors.forEach(function (color) {
-    nav.classList.remove("bg-"+color)
-    nav.classList.remove("navbar-"+color)
-    footer.classList.remove("bg-"+color)
-    footer.classList.remove("text-"+color)
+    if (nav) {
+      nav.classList.remove("bg-"+color)
+      nav.classList.remove("navbar-"+color)
+    }
+    if (footer) {
+      footer.classList.remove("bg-"+color)
+      footer.classList.remove("text-"+color)
+    }
   })
-  nav.classList.add("bg-"+bg)
-  nav.classList.add("navbar-"+(t == "light" ? "light" : "dark"))
-  footer.classList.add("bg-"+bg)
-  footer.classList.add("text-"+(t == "light" ? "dark" : "light"))
+  if (nav) {
+    nav.classList.add("bg-"+bg)
+    nav.classList.add("navbar-"+(t == "light" ? "light" : "dark"))
+  }
+  if (footer) {
+    footer.classList.add("bg-"+bg)
+    footer.classList.add("text-"+(t == "light" ? "dark" : "light"))
+  }
 }
 
 window.addEventListener('load', function () {
