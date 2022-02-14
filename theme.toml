@@ -10,22 +10,11 @@ name = "Marco Tomic"
 homepage = "https://marcodpt.github.io"
 
 [extra]
-navbar = [
-  {title = 'Authors', url = 'authors'},
-	{title = 'Topics', url = 'tags'},
-]
+navbar = []
 date_format = '%d/%m/%Y'
 search = 'Search'
 theme = 'simplex'
 tags = 'Posts by Topics'
-social_icons = [
-  {title = 'Facebook', icon = 'facebook-f', url = 'https://www.facebook.com'},
-  {title = 'Instagram', icon = 'instagram', url = 'https://www.instagram.com'},
-  {title = 'Twitter', icon = 'twitter', url = 'https://twitter.com'},
-  {title = 'YouTube', icon = 'youtube', url = 'https://www.youtube.com'}
-]
-email = "user@mail.com"
-banner = "img/banner.jpeg"
 footer_bg = "dark"
 footer_font = "light"
 navbar_bg = "dark"

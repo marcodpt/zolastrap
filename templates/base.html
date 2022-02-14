@@ -148,18 +148,23 @@
       {% block content %}
       {% endblock %}
     </main>
+    {% set social = config.extra.social_icons | default(value=[])%}
+    {% if config.extra.email or social | length %}
     <footer class="
       mt-auto p-5
       bg-{{config.extra.footer_bg}}
       text-center
       text-{{config.extra.footer_font}}
     ">
+      {% if config.extra.email %}
       <a
         href="mailto:{{config.extra.email}}"
         class="text-reset text-decoration-none"
       >{{config.extra.email}}</a>
+      {% endif %}
+      {% if social | length %}
       <div class="mt-2">
-        {% for icon in config.extra.social_icons %}
+        {% for icon in social %}
           <a
             class="text-reset mx-1 bg-transparent"
             href="{{icon.url}}"
@@ -167,6 +172,8 @@
           ><i class="fab fa-{{icon.icon}}"></i></a>
         {% endfor %}
       </div>
+      {% endif %}
     </footer>
+    {% endif %}
   </body>
 </html>

@@ -4,7 +4,7 @@
       <small>{{page.summary}}...</small>
     {% else %}
       <small>{{
-        page.content | striptags | split(pat=" ") | slice(end=50) | join(sep=" ")
+        page.content | safe | striptags | split(pat=" ") | slice(end=50) | join(sep=" ")
       }}...</small>
     {% endif %}
   </p>
