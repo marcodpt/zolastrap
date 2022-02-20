@@ -28,3 +28,17 @@
     {{authorbox::render(author_slug=author_slug)}}
   {% endfor %}
 {% endblock %}
+
+{% block scripts %}
+  {% if config.extra.utterances %}
+  <script
+    src="https://utteranc.es/client.js"
+    repo="{{config.extra.utterances}}"
+    issue-term="{{config.extra.utterances_issue_term}}"
+    label="{{config.extra.utterances_label}}"
+    theme="{{config.extra.utterances_theme}}"
+    crossorigin="anonymous"
+    async
+  ></script>
+  {% endif %}
+{% endblock %}

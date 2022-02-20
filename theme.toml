@@ -10,16 +10,30 @@ name = "Marco Tomic"
 homepage = "https://marcodpt.github.io"
 
 [extra]
-navbar = []
+banner = ""
 date_format = '%d/%m/%Y'
+
+theme = 'default'
+bg = "dark"
+inverted = false
+
+themes = "Choose a Theme"
+schemes = "Choose a Color Scheme"
 search = 'Search'
-theme = 'simplex'
+tag = 'Posts by Topic'
 tags = 'Posts by Topics'
-footer_bg = "dark"
-footer_font = "light"
-navbar_bg = "dark"
-navbar_type = "dark"
-themes = [
+
+links = []
+email = ""
+icons = []
+
+utterances = ""
+utterances_label = "Comments"
+utterances_theme = "github-light"
+utterances_issue_term = "pathname"
+
+# Do not change this variables
+data_themes = [
   'default',
   'cerulean',
   'cosmo',
@@ -47,19 +61,19 @@ themes = [
   'yeti',
   'zephyr'
 ]
-schemes = [
+data_schemes = [
   'dark',
   'light',
-  'primary dark',
-  'primary light',
-  'secondary dark',
-  'secondary light',
-  'success dark',
-  'success light',
-  'danger dark',
-  'danger light',
-  'warning dark',
-  'warning light',
-  'info dark',
-  'info light',
+  'primary',
+  'primary inverted',
+  'secondary',
+  'secondary inverted',
+  'success',
+  'success inverted',
+  'danger',
+  'danger inverted',
+  'warning',
+  'warning inverted',
+  'info',
+  'info inverted',
 ]

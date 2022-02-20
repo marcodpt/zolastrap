@@ -20,7 +20,9 @@ function switchScheme(scheme) {
     'success',
     'danger',
     'warning',
-    'info'
+    'info',
+    'white',
+    'black'
   ]
 
   const nav = document.querySelector('nav')
@@ -29,6 +31,7 @@ function switchScheme(scheme) {
   const Scheme = scheme.split(" ")
   const bg = Scheme[0]
   const t = Scheme[1] || Scheme[0]
+  const u = t == "light" || t == "inverted"
 
   colors.forEach(function (color) {
     if (nav) {
@@ -42,11 +45,11 @@ function switchScheme(scheme) {
   })
   if (nav) {
     nav.classList.add("bg-"+bg)
-    nav.classList.add("navbar-"+(t == "light" ? "light" : "dark"))
+    nav.classList.add("navbar-"+(u ? "light" : "dark"))
   }
   if (footer) {
     footer.classList.add("bg-"+bg)
-    footer.classList.add("text-"+(t == "light" ? "dark" : "light"))
+    footer.classList.add("text-"+(u ? "black" : "white"))
   }
 }
 

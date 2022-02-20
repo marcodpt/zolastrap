@@ -69,7 +69,7 @@
     <p class="px-3 text-muted">{{section.description}}</p>
   {% endif %}
   {% if section.content %}
-    <div class="px-3">{{section.content | safe}}</div>
+    <div class="content px-3">{{section.content | safe}}</div>
   {% endif %}
 	{% for page in paginator.pages %}
     {{post::render(page=page)}}

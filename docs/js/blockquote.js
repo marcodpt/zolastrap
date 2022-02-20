@@ -7,9 +7,9 @@ window.addEventListener('load', function () {
     "ps-3"
   ]
 
-  document.querySelectorAll(".content blockquote").forEach(function (bq) {
+  document.querySelectorAll(".content blockquote").forEach(function (el) {
     classes.forEach(function (c) {
-      bq.classList.add(c)
+      el.classList.add(c)
     })
   })
 })

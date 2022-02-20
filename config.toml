@@ -18,30 +18,41 @@ build_search_index = true
 highlight_code = true
 
 [extra]
-navbar = [
+banner = "img/banner.jpeg"
+date_format = '%d/%m/%Y'
+
+theme = 'simplex'
+bg = "dark"
+inverted = false
+
+themes = "Choose a Theme"
+schemes = "Choose a Color Scheme"
+search = 'Search'
+tag = 'Posts by Topic'
+tags = 'Posts by Topics'
+
+links = [
 	{title = 'Articles', url = 'articles'},
   {title = 'Authors', url = 'authors'},
 	{title = 'About', url = 'about'},
 	{title = 'Topics', url = 'tags'},
 	{title = 'Github', url = 'https://github.com/marcodpt/zolastrap'},
 ]
-date_format = '%d/%m/%Y'
-search = 'Search'
-theme = 'simplex'
-tags = 'Posts by Topics'
-social_icons = [
+email = "user@mail.com"
+icons = [
   {title = 'Facebook', icon = 'facebook-f', url = 'https://www.facebook.com'},
   {title = 'Instagram', icon = 'instagram', url = 'https://www.instagram.com'},
   {title = 'Twitter', icon = 'twitter', url = 'https://twitter.com'},
   {title = 'YouTube', icon = 'youtube', url = 'https://www.youtube.com'}
 ]
-email = "user@mail.com"
-banner = "img/banner.jpeg"
-footer_bg = "dark"
-footer_font = "light"
-navbar_bg = "dark"
-navbar_type = "dark"
-themes = [
+
+utterances = ""
+utterances_label = "Comments"
+utterances_theme = "github-light"
+utterances_issue_term = "pathname"
+
+# Do not change this variables
+data_themes = [
   'default',
   'cerulean',
   'cosmo',
@@ -69,19 +80,19 @@ themes = [
   'yeti',
   'zephyr'
 ]
-schemes = [
+data_schemes = [
   'dark',
   'light',
-  'primary dark',
-  'primary light',
-  'secondary dark',
-  'secondary light',
-  'success dark',
-  'success light',
-  'danger dark',
-  'danger light',
-  'warning dark',
-  'warning light',
-  'info dark',
-  'info light',
+  'primary',
+  'primary inverted',
+  'secondary',
+  'secondary inverted',
+  'success',
+  'success inverted',
+  'danger',
+  'danger inverted',
+  'warning',
+  'warning inverted',
+  'info',
+  'info inverted',
 ]
